@@ -1,8 +1,8 @@
 import { registerSlashCommands } from "./slash_commands";
 registerSlashCommands()
 
-import { Client, CommandInteraction, Intents, Interaction, InviteStageInstance, MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
-import { config } from "./config";
+import { Client, CommandInteraction, Intents, Interaction, InviteStageInstance, MessageActionRow, MessageButton, MessageEmbed } from "../node_modules/discord.js";
+import { config } from "../config";
 import { CheckIfWin, controls, GameArray, getNewGameArray, insertNewBlockAtRandomPos } from "./game";
 
 const Instances: any = {}
