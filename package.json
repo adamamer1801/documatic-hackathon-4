@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node ./discord.ts"
+    "start": "ts-node ./src/discord.ts"
   },
   "author": "",
   "license": "ISC",
