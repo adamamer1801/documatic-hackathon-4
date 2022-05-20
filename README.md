@@ -1,7 +1,7 @@
 # 2048, but with colors 
 ### with some gameplay changes to make it easier
 
-The only modules used is Discord.js and the ones necessary to implement Slash Commands, as well as ts-node (to run).
+The only modules used are Discord.js and the ones necessary to implement Slash Commands, as well as ts-node (to run).
 
 Remember to run `npm install` and setup your Discord Bot Token and Discord Bot ID in the config.json prior to running the bot
 
