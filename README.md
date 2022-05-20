@@ -1,6 +1,5 @@
 # 2048, but with colors 
-## and also some changes
-### for originality
+## and also some changes for originality
 
 The only modules used is Discord.js and the ones necessary to implement Slash Commands, as well as ts-node (to run).
 
