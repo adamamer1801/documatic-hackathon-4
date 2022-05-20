@@ -10,3 +10,5 @@ To begin, run the bot (`npm start`) and use `/play`. You will be given a 5x5 gri
 It's in the order of the rainbow, for less confusion. Had to make due with what emojis I had (since I couldn't use numbers)
 
 It's easier than you think.
+
+Personal best is 88 moves and 169 seconds :)
