@@ -11,4 +11,4 @@ It's in the order of the rainbow, for less confusion. Had to make due with what 
 
 It's easier than you think.
 
-Personal best is 88 moves and 169 seconds :)
+Personal best is 90 moves and 169 seconds :)
