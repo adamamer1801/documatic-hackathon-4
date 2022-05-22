@@ -1,9 +1,11 @@
 import { registerSlashCommands } from "./slash_commands";
 registerSlashCommands()
 
+
 import { Client, CommandInteraction, Intents, Interaction, InviteStageInstance, MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
 import { config } from "../config";
 import { CheckIfWin, controls, GameArray, getNewGameArray, insertNewBlockAtRandomPos, checkIfLost } from "./game";
+
 
 const Instances: any = {}
 /*
