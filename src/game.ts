@@ -126,25 +126,19 @@ function insertNewBlockAtRandomPos(GameArray: GameArray): GameArray {
 }
 
 function CheckIfWin(GameArray: GameArray): boolean {
+    let result = false
     for (let i = 0; i != GameArray.length; i++) {
-        for (let j = 0; j != GameArray.length; j++) {
-            if (GameArray[i][j] === 7) {
-                return true;
-            }
-        }
+        if (GameArray[i].includes(7)) result = true
     }
-    return false
+    return result;
 }
 
 function checkIfLost(GameArray: GameArray): boolean {
+    let result = true
     for (let i = 0; i != GameArray.length; i++) {
-        for (let j = 0; j != GameArray.length; j++) {
-            if (GameArray[i][j] === 0) {
-                return false;
-            }
-        }
+        if (GameArray[i].includes(0)) result = false;
     }
-    return true;
+    return result;
 }
 
 
