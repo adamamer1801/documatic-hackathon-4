@@ -12,15 +12,15 @@ const controls = {
             for (let j = 0; j != GameArray[i].length; j++) {
                 if (i === 0) continue;
                 if (GameArray[i][j] === 0) continue;
-                while (GameArray[i - 1][j] === 0 || GameArray[i - 1][j] === GameArray[i][j]) {
-                    if (GameArray[i - 1][j] === 0) {
-                        GameArray[i - 1][j] = GameArray[i][j]
-                        GameArray[i][j] = 0
-                    }
-                    if (GameArray[i - 1][j] === GameArray[i][j]) {
-                        GameArray[i - 1][j]++
-                        GameArray[i][j] = 0
-                    }
+                if (GameArray[i - 1][j] === 0) {
+                    GameArray[i - 1][j] = GameArray[i][j]
+                    GameArray[i][j] = 0
+                    continue;
+                }
+                if (GameArray[i - 1][j] === GameArray[i][j]) {
+                    GameArray[i - 1][j]++
+                    GameArray[i][j] = 0
+                    continue;
                 }
             }
         }
@@ -32,15 +32,16 @@ const controls = {
             for (let j = 4; j != -1; j--) {
                 if (i === 4) continue;
                 if (GameArray[i][j] === 0) continue;
-                while (GameArray[i + 1][j] === 0 || GameArray[i + 1][j] === GameArray[i][j]) {
-                    if (GameArray[i + 1][j] === 0) {
-                        GameArray[i + 1][j] = GameArray[i][j]
-                        GameArray[i][j] = 0
-                    }
-                    if (GameArray[i + 1][j] === GameArray[i][j]) {
-                        GameArray[i + 1][j]++
-                        GameArray[i][j] = 0
-                    }
+
+                if (GameArray[i + 1][j] === 0) {
+                    GameArray[i + 1][j] = GameArray[i][j]
+                    GameArray[i][j] = 0
+                    continue;
+                }
+                if (GameArray[i + 1][j] === GameArray[i][j]) {
+                    GameArray[i + 1][j]++
+                    GameArray[i][j] = 0
+                    continue;
                 }
             }
         }
@@ -52,16 +53,18 @@ const controls = {
             for (let j = 0; j != GameArray.length; j++) {
                 if (j === 0) continue;
                 if (GameArray[i][j] === 0) continue
-                while (GameArray[i][j - 1] === 0 || GameArray[i][j - 1] === GameArray[i][j]) {
-                    if (GameArray[i][j - 1] === 0) {
-                        GameArray[i][j - 1] = GameArray[i][j]
-                        GameArray[i][j] = 0
-                    }
-                    if (GameArray[i][j - 1] === GameArray[i][j]) {
-                        GameArray[i][j - 1]++
-                        GameArray[i][j] = 0
-                    }
+
+                if (GameArray[i][j - 1] === 0) {
+                    GameArray[i][j - 1] = GameArray[i][j]
+                    GameArray[i][j] = 0
+                    continue;
                 }
+                if (GameArray[i][j - 1] === GameArray[i][j]) {
+                    GameArray[i][j - 1]++
+                    GameArray[i][j] = 0
+                    continue;
+                }
+
             }
         }
         return GameArray
@@ -72,15 +75,15 @@ const controls = {
             for (let j = 4; j != -1; j--) {
                 if (j === 4) continue;
                 if (GameArray[i][j] === 0) continue
-                while (GameArray[i][j + 1] === 0 || GameArray[i][j + 1] === GameArray[i][j]) {
-                    if (GameArray[i][j + 1] === 0) {
-                        GameArray[i][j + 1] = GameArray[i][j]
-                        GameArray[i][j] = 0
-                    }
-                    if (GameArray[i][j + 1] === GameArray[i][j]) {
-                        GameArray[i][j + 1]++
-                        GameArray[i][j] = 0
-                    }
+                if (GameArray[i][j + 1] === 0) {
+                    GameArray[i][j + 1] = GameArray[i][j]
+                    GameArray[i][j] = 0
+                    continue;
+                }
+                if (GameArray[i][j + 1] === GameArray[i][j]) {
+                    GameArray[i][j + 1]++
+                    GameArray[i][j] = 0
+                    continue;
                 }
             }
         }
@@ -122,7 +125,7 @@ function insertNewBlockAtRandomPos(GameArray: GameArray): GameArray {
 
 }
 
-function CheckIfWin(GameArray: GameArray) {
+function CheckIfWin(GameArray: GameArray): boolean {
     for (let i = 0; i != GameArray.length; i++) {
         for (let j = 0; j != GameArray.length; j++) {
             if (GameArray[i][j] === 7) {
@@ -133,5 +136,16 @@ function CheckIfWin(GameArray: GameArray) {
     return false
 }
 
+function checkIfLost(GameArray: GameArray): boolean {
+    for (let i = 0; i != GameArray.length; i++) {
+        for (let j = 0; j != GameArray.length; j++) {
+            if (GameArray[i][j] === 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
-export { CheckIfWin, insertNewBlockAtRandomPos, getNewGameArray, controls, GameArray }
+
+export { CheckIfWin, insertNewBlockAtRandomPos, getNewGameArray, checkIfLost, controls, GameArray }
