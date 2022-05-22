@@ -1,4 +1,4 @@
-import { config } from "./config";
+import { config } from "../config";
 
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');

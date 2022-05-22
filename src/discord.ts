@@ -2,8 +2,8 @@ import { registerSlashCommands } from "./slash_commands";
 registerSlashCommands()
 
 import { Client, CommandInteraction, Intents, Interaction, InviteStageInstance, MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
-import { config } from "./config";
-import { CheckIfWin, controls, GameArray, getNewGameArray, insertNewBlockAtRandomPos } from "./game";
+import { config } from "../config";
+import { CheckIfWin, controls, GameArray, getNewGameArray, insertNewBlockAtRandomPos, checkIfLost } from "./game";
 
 const Instances: any = {}
 /*
@@ -80,6 +80,16 @@ client.on("interactionCreate", async (interaction: Interaction) => {
             .addField("Time Taken", ((Date.now() -  Instances[interaction?.member?.user?.id][3]) / 1000).toString() + " seconds")
             .addField("Total Moves", Instances[interaction?.member?.user?.id][2].toString())
             .setColor("GREEN")
+            cmdInteraction.editReply({ 
+                embeds: [embed],
+                components: []
+            })
+            delete Instances[interaction?.member?.user?.id]
+        } else if (checkIfLost(GameArray)) {
+            const embed = new MessageEmbed().setTitle("You lost!")
+            .addField("Time elapsed", ((Date.now() -  Instances[interaction?.member?.user?.id][3]) / 1000).toString() + " seconds")
+            .addField("Total Moves", Instances[interaction?.member?.user?.id][2].toString())
+            .setColor("RED")
             cmdInteraction.editReply({ 
                 embeds: [embed],
                 components: []
