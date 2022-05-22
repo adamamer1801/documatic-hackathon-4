@@ -1,4 +1,5 @@
-# 2048, but with colors 
+# game with colours
+## similar to 2048
 ### with some gameplay changes to make it easier
 
 The only modules used are Discord.js and the ones necessary to implement Slash Commands, as well as ts-node (to run).
