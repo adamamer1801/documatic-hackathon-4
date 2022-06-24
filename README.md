@@ -1,3 +1,5 @@
+# My submission for the Documatic 4th Hackathon.
+
 # game with colours
 ## similar to 2048
 ### with some gameplay changes to make it easier
